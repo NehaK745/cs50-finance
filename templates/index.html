@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stocks
+{% endblock %}
+
+{% block main %}
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="bg-success">
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Name</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tfoot>
+      <tr>
+       <td colspan="4"></td>
+       <td>{{total}}</td>
+      </tfoot>
+      <tbody>
+        {% for h in holding %}
+        <tr>
+          <td>{{h["symbol"]}}</td>
+           <td>{{h["name"]}}</td>
+            <td>{{h["shares"]}}</td>
+             <td>{{h["prices"]}}</td>
+              <td>{{h["total"]}}</td>
+              </tr>
+        <tfoot>
+        {% endfor %}
+        <tr> <td colspan="4">CASH</td>
+        <td>{{cash}}</td>
+        </tr>
+        
+        </tfoot>
+      </tbody>
+        
+    </table>
+    </div>
+{% endblock %}

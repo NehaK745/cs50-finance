@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="bg-success">
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Transacted</th>
+          
+        </tr>
+      </thead>
+      <tfoot>
+      <tr>
+       <td colspan="4"></td>
+       <td>{{total}}</td>
+      </tfoot>
+      <tbody>
+        {% for t in transactions %}
+        <tr>
+          <td>{{t["symbol"]}}</td>
+            <td>{{t["shares"]}}</td>
+             <td>{{t["price"]}}</td>
+              <td>{{t["transacted"]}}</td>
+              </tr>
+              {% endfor %}
+      </tbody>
+        
+    </table>
+    </div>
+{% endblock %}

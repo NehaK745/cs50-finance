@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<h1 class="display-4">Stock Price</h1>
+
+<h4>A stock of {{ quote['name'] }} {{ quote['symbol'] }} is worth {{ quote['price'] }} </h4>
+{% endblock %}
